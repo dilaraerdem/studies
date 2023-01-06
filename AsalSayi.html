@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asal Sayı</title>
+  </head>
+  <body>
+    <form action="#">
+      <label for="Bitis">Bitiş Sayısı;</label>
+      <input type="text" id="Bitis" /><br /><br />
+      <input type="button" value="Hesapla" onclick="asalhesapla()" />
+    </form>
+
+    <p id="asal"></p>
+
+    <script>
+      var asal = 0;
+      var text = "";
+      function asalhesapla() {
+        var say = 0;
+        asal = document.getElementById("Bitis").value;
+        for (i = 2; i < asal; i++) {
+          if (asal % i == 0);
+          say++;
+        }
+        if (say == 0) {
+          text = "asal";
+        } else {
+          text =
+            "Asal değil." +
+            " " +
+            "1 ve kendisi hariç" +
+            " " +
+            say +
+            " " +
+            "böleni var.";
+        }
+        document.getElementById("asal").innerText = text;
+      }
+    </script>
+  </body>
+</html>

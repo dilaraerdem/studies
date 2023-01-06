@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pozitif Negatif Sıfır</title>
+</head>
+<body>
+    <h1>Sayı Kontrolü</h1>
+    <input type="text" id="kontrol"> <br>
+    <input type="button" id="hesapla" value="HESAPLA" onclick="tekCift()">
+    <p id="yazdir"></p>
+
+
+    <script>
+        var text="";
+        function tekCift(){
+            s=document.getElementById("kontrol").value;
+            if(s>0){
+                text="Sayı Pozitif"
+            }
+            else if(s<0){
+                text="Sayı Negatiftir"
+            }
+            else{
+                text="Sayı Sıfıra Eşit"
+            }
+            document.getElementById("yazdir").innerHTML=text;
+        }
+    </script>
+</body>
+</html>

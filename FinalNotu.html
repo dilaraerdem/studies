@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sınav Notu Heaplama</title>
+  </head>
+  <body>
+    <form action="#">
+      <label for="vizeN">Vize:</label>
+      <input type="text" id="vizeN" /><br /><br />
+      <label for="finalN">Final:</label>
+      <input type="text" id="finalN" /><br /><br />
+      <input type="button" value="HESAPLA" onclick="finalNotu()" />
+    </form>
+    <p id="not1"></p>
+    <p id="not2"></p>
+
+    <script>
+      var text = 0;
+      function finalNotu() {
+        var vize = document.getElementById("vizeN").value;
+        var final = document.getElementById("finalN").value;
+        var ortalama = (Number(vize) + Number(final)) / 2;
+        document.getElementById("not1").innerText =
+          "Ortalamanız" + ":" + ortalama;
+
+        for (i = 0; i <= 100; i++) {
+          if (final < 50) {
+            text = " Final notunuz 50'den küçük dersten kaldınız,geçmiş olsun";
+          } else {
+            text = " Final notunuz 50'den büyük dersten geçtiniz tebrikler";
+          }
+          document.getElementById("not2").innerText = text;
+        }
+      }
+    </script>
+  </body>
+</html>

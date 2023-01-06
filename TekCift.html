@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tek Çift Kontrolü</title>
+</head>
+<body>
+    <h1>Tek Çift Sayı Kontrolü</h1>
+    <input type="text" id="kontrol">
+    <input type="button" value="HESAPLA" onclick="hesapla()">
+    <p id="sonuc"></p>
+
+    <script>
+        var s=0;
+        var text="";
+        function hesapla(){
+            s=document.getElementById("kontrol").value;
+            for(i=0; i<s; i++){
+                if(s%2==0){
+                  text="Çift Sayı"
+                }
+                else{
+                    text="Tek Sayı"
+                }
+                document.getElementById("sonuc").innerText=text;
+            }
+        }
+    </script>
+</body>
+</html>

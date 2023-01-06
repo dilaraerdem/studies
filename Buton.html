@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" class="ligth-mode">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arka Plan Rengi</title>
+    <style>
+      .ligth-mode .deneme-01 {
+        width: 1000px;
+        margin: auto;
+        display: grid;
+        gap: 24px;
+        background-color: #f0f0f0;
+      }
+      .ligth-mode .deneme-01-A {
+        display: flex;
+        justify-content: center;
+        color: brown;
+      }
+
+      .ligth-mode .deneme-01-B {
+        margin: auto;
+      }
+      .dark-mode .deneme-01 {
+        width: 1000px;
+        margin: auto;
+        display: grid;
+        gap: 24px;
+        background-color: rgb(29, 28, 28);
+      }
+      .dark-mode .deneme-01-A {
+        display: flex;
+        justify-content: center;
+        color: #1a8cd8;
+      }
+
+      .dark-mode .deneme-01-B {
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="deneme-01">
+      <h1 class="deneme-01-A">Mod Değiştirme Örneği</h1>
+      <a href="#" class="deneme-01-A" onclick="newTheme(event);"
+        >Mod Geçişi Yap</a
+      >
+      <img class="deneme-01-B" src="images/friends.jpeg" alt="" />
+      <p class="deneme-01-A">
+        Rachel ve Monica çocukluk arkadaşıdır. Monica’nın ağabeyi Ross’un
+        arkadaşı Chandlerdir. Chandler’in ev arkadaşı da Phoebe’dir.Bu 6
+        arkadaşın geçmişleri bir şekilde kesişmiştir. Yedikleri içtikleri ayrı
+        gitmezdi. Müthiş mizah yeteneklerine sahip olan bu 6 arkadaş tam 10
+        sezona yayılan harika hikayeleri ile birlikte adeta ekran önünde
+        büyüyorlar. Friends dizisi, 20’li yaşlarındaki 6 gencin, bugün hala
+        izlenen ve birbirinden farklı olan 3 kadın karakter ve 3 erkek karakter
+        olmak üzere ilginç ve eğlenceli maceralarını konu almaktadır.
+      </p>
+    </div>
+
+    <script>
+      function newTheme(event) {
+        event.preventDefault();
+        var mode = localStorage.getItem("theme");
+        if (mode === "dark") {
+          localStorage.setItem("theme", "light");
+          document.querySelector("html").classList.remove("dark-mode");
+          document.querySelector("html").classList.add("light-mode");
+        } else {
+          localStorage.setItem("theme", "dark");
+          document.querySelector("html").classList.remove("ligt-mode");
+          document.querySelector("html").classList.add("dark-mode");
+        }
+      }
+
+      function controlTheme() {
+        var mode = localStorage.getItem("theme");
+        if (mode === "dark") {
+          document.querySelector("html").classList.remove("light-mode");
+          document.querySelector("html").classList.add("dark-mode");
+        }
+      }
+      controlTheme();
+    </script>
+  </body>
+</html>
